@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/FileArchive/v15
+/FileArchive.Core/obj
+/FileArchive.Core/bin/Debug/netstandard2.0
+/FileArchive.Domain/bin/Debug/netstandard2.0
+/FileArchive.Domain/obj
+/FileArchive.Repository/bin/Debug/netcoreapp2.2
+/FileArchive.Repository/obj
