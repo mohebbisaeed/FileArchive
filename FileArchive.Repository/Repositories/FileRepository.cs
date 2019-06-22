@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FileArchive.Repository.Repositories
 {
-    public class FolderRepository : GenericRepository<Folder,int>, IFolderRepository
+    public class FileRepository : GenericRepository<Domain.Entities.File, Guid>, IFileRepository
     {
-        public FolderRepository(FileArchiveContext ctx):base(ctx)
+        public FileRepository(FileArchiveContext ctx) : base(ctx)
         {
         }
     }

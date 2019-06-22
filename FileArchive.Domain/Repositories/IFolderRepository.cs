@@ -9,16 +9,15 @@ namespace FileArchive.Domain.Repositories
 {
     public interface IFolderRepository : IRepository
     {
-        void Add(Folder folder);
-        Task AddAsyn(Folder folder);
+        Folder Add(Folder folder);
+        Task<Folder> AddAsync(Folder folder);
 
-        void Update(Folder folder);
-        Task UpdateAsyn(Folder folder);
+        Folder Update(Folder folder, int id);
+        Task<Folder> UpdateAsync(Folder folder, int id);
 
         void Delete(Folder folder);
-        Task DeleteAsyn(Folder folder);
 
         Folder Get(int id);
-        Task<Folder> GetAsyn(int id);
+        Task<Folder> GetAsync(int id);
     }
 }

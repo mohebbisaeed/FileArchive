@@ -1,26 +1,46 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using EFSecondLevelCache.Core;
+using FileArchive.Domain.Entities;
+using System.Configuration;
 
 namespace FileArchive.Repository
 {
     public class FileArchiveContext : DbContext
     {
         public FileArchiveContext(DbContextOptions<FileArchiveContext> options) : base(options)
-        { }
+        {
+        }
 
-        //public override int SaveChanges()
-        //{
-        //    var changedEntityNames = this.GetChangedEntityNames();
+        #region Dbsets
+        public DbSet<File> Files { get; set; }
+        public DbSet<FileCustomProperty> FileCustomProperties { get; set; }
+        public DbSet<FileDetail> FileDetails { get; set; }
+        public DbSet<FileType> FileTypes { get; set; }
+        public DbSet<Folder> Folders { get; set; }
+        public DbSet<ImageFile> ImageFiles { get; set; }
+        public DbSet<MediaFile> MediaFiles { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<User> Users { get; set; }
+        #endregion
 
-        //    this.ChangeTracker.AutoDetectChangesEnabled = false; // for performance reasons, to avoid calling DetectChanges() again.
-        //    var result = base.SaveChanges();
-        //    this.ChangeTracker.AutoDetectChangesEnabled = true;
 
-        //    this.GetService<IEFCacheServiceProvider>().InvalidateCacheDependencies(changedEntityNames);
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["FileArchiveContext"].ConnectionString);
 
-        //    return result;
-        //}
+            base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FileType>().HasData(
+                                new FileType { Id = 1, Title = "Image" },
+                                new FileType { Id = 2, Title = "Media" },
+                                new FileType { Id = 3, Title = "Other" }
+                                );
+            base.OnModelCreating(modelBuilder);
+        }
 
     }
 }

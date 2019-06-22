@@ -3,13 +3,12 @@ using FileArchive.Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FileArchive.Repository.Repositories
 {
-    public class FolderRepository : GenericRepository<Folder,int>, IFolderRepository
+   public  class ImageFileRepository : GenericRepository<ImageFile, int>, IImageFileRepository
     {
-        public FolderRepository(FileArchiveContext ctx):base(ctx)
+        public ImageFileRepository(FileArchiveContext ctx) : base(ctx)
         {
         }
     }

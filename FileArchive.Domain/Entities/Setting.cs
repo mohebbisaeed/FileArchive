@@ -5,11 +5,10 @@ using System.Text;
 
 namespace FileArchive.Domain.Entities
 {
-    /// <summary>
-    /// This entity has three fixed records 1-Image, 2-Media , 3-Other(docs,zip,pdf ,...)
-    /// </summary>
-    public class FileType : Entity
+    public class Setting : File
     {
         public string Title { get; set; }
+        public string SettingKey { get; set; }
+        public string Value { get; set; }
     }
 }

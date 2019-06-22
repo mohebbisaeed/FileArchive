@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FileArchive.Repository
 {
-    public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
+    public abstract class GenericRepository<T,TId> : IGenericRepository<T,TId> where T : class
     {
         protected FileArchiveContext _context;
 
@@ -23,36 +23,34 @@ namespace FileArchive.Repository
             return _context.Set<T>();
         }
 
-        public virtual async Task<ICollection<T>> GetAllAsyn()
+        public virtual async Task<ICollection<T>> GetAllAsync()
         {
 
             return await _context.Set<T>().ToListAsync();
         }
 
-        public virtual T Get(int id)
+        public virtual T Get(TId id)
         {
             return _context.Set<T>().Find(id);
         }
 
-        public virtual async Task<T> GetAsync(int id)
+        public virtual async Task<T> GetAsync(TId id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
 
-        public virtual T Add(T t)
+        public virtual T Add(T entity)
         {
-
-            _context.Set<T>().Add(t);
-            _context.SaveChanges();
-            return t;
+            _context.Set<T>().Add(entity);
+            //_context.SaveChanges();
+            return entity;
         }
 
-        public virtual async Task<T> AddAsyn(T t)
+        public virtual async Task<T> AddAsync(T entity)
         {
-            _context.Set<T>().Add(t);
-            await _context.SaveChangesAsync();
-            return t;
-
+           await _context.Set<T>().AddAsync(entity);
+           // await _context.SaveChangesAsync();
+            return entity;
         }
 
         public virtual T Find(Expression<Func<T, bool>> match)
@@ -81,34 +79,35 @@ namespace FileArchive.Repository
             _context.SaveChanges();
         }
 
-        public virtual async Task<int> DeleteAsyn(T entity)
-        {
-            _context.Set<T>().Remove(entity);
-            return await _context.SaveChangesAsync();
-        }
+        //public virtual async Task<int> DeleteAsync(T entity)
+        //{
+        //    _context.Set<T>().Remove(entity);
+        //   // return await _context.SaveChangesAsync();
+        //   return 0;
+        //}
 
-        public virtual T Update(T t, object key)
+        public virtual T Update(T entity, TId key)
         {
-            if (t == null)
+            if (entity == null)
                 return null;
             T exist = _context.Set<T>().Find(key);
             if (exist != null)
             {
-                _context.Entry(exist).CurrentValues.SetValues(t);
-                _context.SaveChanges();
+                _context.Entry(exist).CurrentValues.SetValues(entity);
+                //_context.SaveChanges();
             }
             return exist;
         }
 
-        public virtual async Task<T> UpdateAsyn(T t, object key)
+        public virtual async Task<T> UpdateAsync(T entity, TId key)
         {
-            if (t == null)
+            if (entity == null)
                 return null;
             T exist = await _context.Set<T>().FindAsync(key);
             if (exist != null)
             {
-                _context.Entry(exist).CurrentValues.SetValues(t);
-                await _context.SaveChangesAsync();
+                _context.Entry(exist).CurrentValues.SetValues(entity);
+                //await _context.SaveChangesAsync();
             }
             return exist;
         }
@@ -123,16 +122,15 @@ namespace FileArchive.Repository
             return await _context.Set<T>().CountAsync();
         }
 
-        public virtual void Save()
-        {
+        //public virtual void Save()
+        //{
+        //    _context.SaveChanges();
+        //}
 
-            _context.SaveChanges();
-        }
-
-        public async virtual Task<int> SaveAsync()
-        {
-            return await _context.SaveChangesAsync();
-        }
+        //public async virtual Task<int> SaveAsync()
+        //{
+        //    return await _context.SaveChangesAsync();
+        //}
 
         public virtual IQueryable<T> FindBy(Expression<Func<T, bool>> predicate)
         {
@@ -140,14 +138,13 @@ namespace FileArchive.Repository
             return query;
         }
 
-        public virtual async Task<ICollection<T>> FindByAsyn(Expression<Func<T, bool>> predicate)
+        public virtual async Task<ICollection<T>> FindByAsync(Expression<Func<T, bool>> predicate)
         {
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
         public IQueryable<T> GetAllIncluding(params Expression<Func<T, object>>[] includeProperties)
         {
-
             IQueryable<T> queryable = GetAll();
             foreach (Expression<Func<T, object>> includeProperty in includeProperties)
             {
