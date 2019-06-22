@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileArchive.Repository", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileArchive.Web", "FileArchive.Web\FileArchive.Web.csproj", "{856DEA4E-053B-4808-B126-35DE1937A752}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileArchive.ApplicationService", "FileArchive.ApplicationService\FileArchive.ApplicationService.csproj", "{56F77278-AD10-4540-B845-4274D2C2322A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileArchive.Boostrapper", "FileArchive.Boostrapper\FileArchive.Boostrapper.csproj", "{C0506776-B979-4B50-A579-27F34EAAEC8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{856DEA4E-053B-4808-B126-35DE1937A752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{856DEA4E-053B-4808-B126-35DE1937A752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{856DEA4E-053B-4808-B126-35DE1937A752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F77278-AD10-4540-B845-4274D2C2322A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F77278-AD10-4540-B845-4274D2C2322A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F77278-AD10-4540-B845-4274D2C2322A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F77278-AD10-4540-B845-4274D2C2322A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0506776-B979-4B50-A579-27F34EAAEC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0506776-B979-4B50-A579-27F34EAAEC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0506776-B979-4B50-A579-27F34EAAEC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0506776-B979-4B50-A579-27F34EAAEC8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

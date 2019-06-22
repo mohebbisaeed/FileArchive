@@ -10,3 +10,5 @@
 /FileArchive.Repository/bin/Debug/netcoreapp2.2
 /FileArchive.Repository/obj
 /.vs/config
+/FileArchive.ApplicationService/obj
+/FileArchive.Boostrapper/obj
