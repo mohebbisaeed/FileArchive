@@ -25,7 +25,6 @@ namespace FileArchive.Domain.Entities
         public FileType FileType { get; set; }
         public Int64 FileSize { get; set; }
 
-        //[DefaultValue(typeof( DateTime), DateTime.Now.ToString())]
         [Column(TypeName = "date")]
         public DateTime CreateDate { get; set; }
         public bool IsPreviewFolder { get; set; }

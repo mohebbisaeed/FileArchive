@@ -12,7 +12,10 @@ namespace FileArchive.Repository.EntityMappings
         public void Configure(EntityTypeBuilder<File> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).ValueGeneratedNever();
+            builder.Property(x => x.Id).HasDefaultValueSql("NEWSEQUENTIALID()");
             builder.Property(x => x.FileExtention).HasMaxLength(10);
+            builder.Property(x => x.Body);
         }
     }
 }

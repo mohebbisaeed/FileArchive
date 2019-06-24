@@ -27,13 +27,13 @@ namespace FileArchive.Repository
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["FileArchiveContext"].ConnectionString);
-
             base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            ModelBuilderMappingRegister.RegisterModelCreate(modelBuilder);
+
             modelBuilder.Entity<FileType>().HasData(
                                 new FileType { Id = 1, Title = "Image" },
                                 new FileType { Id = 2, Title = "Media" },
