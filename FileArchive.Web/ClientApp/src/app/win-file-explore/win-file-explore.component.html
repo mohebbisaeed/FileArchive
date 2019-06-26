@@ -1,0 +1,38 @@
+<div class="win-explore-header d-flex justify-content-start win-dir-right p-2">
+  <span class="win-clickable" (click)="close()"><i class="fa fa-close win-fonticon"></i></span>
+  <span class="win-clickable" (click)="minimize()"><i class="fa fa-minus win-fonticon pr-3"></i></span>
+</div>
+
+
+<div class="win-explore-route d-flex justify-content-start  p-2">
+  <div class="border border-dark ml-2">
+    <input type="text" placeholder="جست و جو ...">
+  </div>
+  <div class="flex-lg-grow-1 border border-dark text-left ml-2 pl-1">
+    c://file/my file
+    <span class="float-right mr-1"><i class="fa fa-undo win-fonticon "></i></span>
+  </div>
+  <span class="win-clickable"><i class="fa fa-arrow-right win-fonticon ml-3"></i></span>
+  <span class="win-clickable"><i class="fa fa-arrow-left win-fonticon"></i></span>
+</div>
+
+
+
+<div class="d-flex justify-content-between" >
+  <div class="win-explore-content w-75 p-4">
+    <div class="text-left">
+      file 1
+      <span class="ml-2"><i class="fa fa-file win-fonticon "></i></span>
+      file 1
+      <span class="ml-2"><i class="fa fa-file win-fonticon "></i></span>
+    </div>
+  </div>
+  <div class="w-25 win-explore-left-menu border-right border-primary p-3" >
+    <p class="text-left">folder 1
+      <span ><i class="fa fa-folder win-fonticon "></i></span>
+    </p>
+    <p class="text-left">folder 2
+      <span ><i class="fa fa-folder win-fonticon "></i></span>
+    </p>
+  </div>
+</div>
