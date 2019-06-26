@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Windows 10</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="win-no-pm">
+<div class="win-desktop  win-no-pm">
+  <div class="win-content win-no-pm">
+    <ngx-aside #NgxAsidePanelRight class="win-no-pm"
+               (cancel)="NgxAsidePanelRight.hide()"
+               [title]="'Title'"
+               [cancelButtonTitle]="'Discard'"
+               [submitButtonTitle]="'Send'"
+               [closeOnEscape]="false"
+               [showOverlay]="false"
+               [showDefaultFooter]="false"
+               [showDefaultHeader]="false">
+      <header>My own header with own styles</header>
+      <footer class="d-flex win-no-pm"><button class="btn btn-danger flex-fill " (click)="NgxAsidePanelRight.hide()"> Close </button> </footer>
+    </ngx-aside>
+  </div>
+
+  <div class="win-startbar border border-4 border-dark d-flex win-no-pm justify-content-between">
+    <div class="d-flex">
+      <div class="win-short-desktop win-clickable p-1">-</div>
+      <div class="win-clickable p-2">
+        <span class="win-clickable" (click)="NgxAsidePanelRight.show()"><i class="fa fa-bell win-fonticon ml-3"></i></span>
+      </div>
+      <div class="text-center pr-2">
+        <p class="win-no-pm">12:32 عصر</p>
+        <p>1398/03/13</p>
+      </div>
+    </div>
+    <div class="d-flex p-1">
+      <div class="pl-1">
+        <a class="win-clickable" (click)="fileExploreClose('minimize')"><img src="../../assets/icon/File.ico" class="win-icon win-clickable"></a>
+      </div>
+      <div class="dropup ">
+        <button type="button" class="win-startmenu-btn win-icon win-clickable" data-toggle="dropdown">
+        </button>
+        <div class="dropdown-menu win-startmenu-content">
+          <div class="d-flex h-100 justify-content-between ">
+            <div class="w-50 text-left p-3">
+              sdf
+            </div>
+            <div class="w-50 border-right  border-primary p-1">
+              <a class="dropdown-item text-left" href="#">Link 1</a>
+              <a class="dropdown-item text-left" href="#">Link 2</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="win-explore border border-3s border-info" *ngIf="fileExploreFlag" id="window">
+  <app-win-file-explore
+    (closing)="fileExploreClose('close')"
+    (minimizing)='fileExploreMinimize()'
+  >
+  </app-win-file-explore>
+</div>
+
+</body>
+</html>

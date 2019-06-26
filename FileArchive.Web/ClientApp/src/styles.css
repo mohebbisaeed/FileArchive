@@ -1,1 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+  text-align: right;
+  direction: rtl;
+}
+.win-no-pm{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.win-desktop{
+  height: 100vh;
+  overflow: hidden !important;
+  color: white;
+}
+.win-content{
+  height: 93vh;
+  background-image: url('./assets/bg.png');
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: center;
+}
+.win-startbar{
+  height: 7vh;
+  background-color: #00203FFF;
+}
+.win-icon{
+  width: 43px;
+  height: 43px;
+}
+
+.win-datetime{
+  text-align: center;
+}
+.win-short-desktop{
+  background-color: wheat;
+  color: wheat;
+}
+
+.win-startmenu-btn{
+  background-image: url('./assets/icon/saipa.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: transparent;
+  border: none;
+
+}
+.win-startmenu-content{
+  border-radius: 0;
+  height: 70vh;
+  width: 500px;
+  background: rgba(109, 109, 109, 0.9);
+
+}
+.dropdown-item{
+  color: white;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  color: white;
+  text-decoration: none;
+  background-color: rgb(75, 75, 75);
+}
+.win-explore{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 93vh;
+  background-color: whitesmoke;
+}
+.win-explore-header{
+  height: 7vh;
+  background-color: #ececec;
+}
+.win-explore-content{
+  height: 79vh;
+}
+.win-explore-left-menu{
+  height: 79vh;
+}
+.win-fonticon{
+  font-size: 30px;
+}
+.win-dir-right{
+  direction: rtl;
+}
+.win-clickable:hover{
+  cursor: pointer !important;
+  opacity: 0.8;
+}
+.aside{
+  padding: 0px !important;
+  margin: 0px !important;
+}
