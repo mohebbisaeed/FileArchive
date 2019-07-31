@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace FileArchive.Domain.Repositories
 {
-    public interface IFolderRepository : IRepository
+    public interface IFolderRepository : IGenericRepository<Folder, int>
     {
-        Folder Add(Folder folder);
-        Task<Folder> AddAsync(Folder folder);
+        //Folder Add(Folder folder);
+        //Task<Folder> AddAsync(Folder folder);
 
-        Folder Update(Folder folder, int id);
-        Task<Folder> UpdateAsync(Folder folder, int id);
+        //Folder Update(Folder folder, int id);
+        //Task<Folder> UpdateAsync(Folder folder, int id);
 
-        void Delete(Folder folder);
+        //void Delete(Folder folder);
 
-        Folder Get(int id);
-        Task<Folder> GetAsync(int id);
+        //Folder Get(int id);
+        //Task<Folder> GetAsync(int id);
     }
 }

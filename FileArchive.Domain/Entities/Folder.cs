@@ -8,6 +8,6 @@ namespace FileArchive.Domain.Entities
     public class Folder : Entity
     {
         public string Title { get; set; }
-        public int ParentId { get; set; }
+        public int? ParentId { get; set; }
     }
 }

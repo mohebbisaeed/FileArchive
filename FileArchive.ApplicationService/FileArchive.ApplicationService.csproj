@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FileArchive.Core\FileArchive.Core.csproj" />
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Files\Dto\" />
+    <ProjectReference Include="..\FileArchive.Core\FileArchive.Core.csproj" />
+    <ProjectReference Include="..\FileArchive.Domain\FileArchive.Domain.csproj" />
   </ItemGroup>
 
 </Project>
